@@ -38,7 +38,8 @@ class ProductTest < ActiveSupport::TestCase
     Product.new(
       title: "My Book Title",
       description: "yyyy",
-      price: 1
+      price: 1,
+      image_url: image_url
     )
   end
 
@@ -60,7 +61,7 @@ class ProductTest < ActiveSupport::TestCase
       price: 1,
       image_url: "fred.gif"
     )
-    assert product.valid?
+    assert product.invalid?
     assert_equal(
       ["has already been taken"],
       product.errors[:title]
