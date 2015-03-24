@@ -3,7 +3,7 @@
 <% end %>
 
 <h1>Your Pragmatic Catalog</h1>
-<% cache ['store', Product.last] do %>
+<% cache ['store', Product.latest] do %>
   <% @products.each do |product| %>
     <div class="entry">
       <% cache ['entry', product] do %>
